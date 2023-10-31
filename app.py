@@ -10,7 +10,7 @@ with open("faiss_store_openai.pkl", "rb") as f:
     vectorStore_openAI = pickle.load(f)
 
 # Initialize OpenAI language model
-llm = OpenAI(temperature=0,  openai_api_key="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")
+llm = OpenAI(temperature=0,  openai_api_key="...")
 
 # Create the QA chain
 chain = RetrievalQAWithSourcesChain.from_llm(llm=llm, retriever=vectorStore_openAI.as_retriever())
